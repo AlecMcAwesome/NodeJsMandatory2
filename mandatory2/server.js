@@ -47,7 +47,6 @@ app.get("/match/:nickname/:choice", function(req,res){
 });
 
 // TODO: clear cache when entering the game. id:3
-// TODO: Make both players be able to get color chemes for background! +id 1 id:2
 
 app.get("/result/:nickname", function(req,res){
   var sNickname = req.params.nickname;
