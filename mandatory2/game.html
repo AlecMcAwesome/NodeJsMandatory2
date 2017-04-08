@@ -108,7 +108,7 @@
 					$("body").css( {"background-color":"green"} );
 					console.log("Won!");
 				}
-				if( jData.status == "winner" && !jData.nickname == sNickname){
+				if( jData.status == "winner" && jData.nickname != sNickname){
 					console.log("Lost");
 					$("body").css( {"background-color":"red"} );
 				}

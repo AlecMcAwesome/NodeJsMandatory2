@@ -60,45 +60,47 @@ app.get("/result/:nickname", function(req,res){
   if (jPlayerOne.choice == jPlayerTwo.choice) {
     res.json({"status":"even"});
   }
-  // player1 winner
+
   if (jPlayerOne.choice == "rock" && jPlayerTwo.choice == "scissor") {
-    console.log("Sending JSON!");
-
-// send to responses her.
-
-
-
-
-
-
-
-
-    res.json(
-      {
+    res.json({
         "status":"winner",
         "nickname":jPlayerOne.nickname
       });
-    console.log("JSON sent");
   }
-  /*
-  // player1 loser
+
   if (jPlayerOne.choice == "rock" && jPlayerTwo.choice == "paper") {
-    res.json({"status":"loser","nickname":jPlayerOne.nickname});
+    res.json({
+        "status": "winner",
+        "nickname": jPlayerTwo.nickname
+      });
   }
+
   if (jPlayerOne.choice == "paper" && jPlayerTwo.choice == "rock") {
-    res.json({"status":"winner","nickname":jPlayerOne.nickname});
+    res.json({
+      "status": "winner",
+      "nickname": jPlayerOne.nickname
+    });
   }
+
   if (jPlayerOne.choice == "paper" && jPlayerTwo.choice == "scissor") {
-		res.json({"status":"loser","nickname":jPlayerOne.nickname});
+    res.json({
+      "status":"winner",
+      "nickname": jPlayerTwo.nickname
+    });
   }
+
   if (jPlayerOne.choice == "scissor" && jPlayerTwo.choice == "paper") {
-    res.json({"status":"winner","nickname":jPlayerOne.nickname});
-  }
+    res.json({
+      "status":"winner",
+      "nickname": jPlayerOne.nickname
+    });
+ }
   if (jPlayerOne.choice == "scissor" && jPlayerTwo.choice == "rock") {
-    res.json({"status":"loser","nickname":jPlayerOne.nickname});
+      res.json({
+        "status":"winner",
+        "nickname": jPlayerTwo.nickname
+      });
   }
-  */
-  // __________ player2 wins_________________//
 });
 
 app.listen(8080, function(err,req,res){
